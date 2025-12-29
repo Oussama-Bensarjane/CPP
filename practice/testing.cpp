@@ -13,9 +13,9 @@ namespace example {
 namespace another {
     int variable = 99;
 
-		 void display() {
+	void display() {
         std::cout << "This is the another namespace. " << std::endl;
-			}
+	}
 }
 
 int main() {
@@ -27,3 +27,6 @@ int main() {
 		
     return 0;
 }
+/*
+g++ -std=c++98
+*/
