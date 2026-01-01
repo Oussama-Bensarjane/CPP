@@ -1,16 +1,22 @@
+
 #include <iostream>
-#include <string>
+#include <cctype>
 
-namespace Dchira 
+int main(int argc, char **argv)
 {
-	int var = 12;
-	void Display ()
+	if (argc > 1)
 	{
-		std::cout << "My lovely Toown called "; 
+		for (int i = 1; i < argc; i++)
+		{
+			for (int j = 0; argv[i][j] != '\0'; j++)
+				argv[i][j] = (char)toupper(argv[i][j]);
+			std::cout << argv[i];
+			if (argv[i] != NULL)
+				std::cout << " ";
+		}
+		std::cout << std::endl;
 	}
-}
-
-int main()
-{
-	std::cout << Dchira::var << std::endl;
+	else
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+	return (0);
 }
