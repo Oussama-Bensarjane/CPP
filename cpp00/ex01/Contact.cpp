@@ -14,7 +14,7 @@ std::string Contact::_getInput(std::string prompt) const {
         {
             std::cin.clear();
             std::cout << "Input stream error; try again." << std::endl;
-            continue;
+            break;
         }
         if (!input.empty())
             break;
@@ -24,7 +24,8 @@ std::string Contact::_getInput(std::string prompt) const {
 }
 
 void    Contact::init(void) {
-    this->_firstName = this->_getInput("Please enter your first name: ");
+    Contact::_firstName = this->_getInput("Please enter your first name: ");
+    // this->_firstName = this->_getInput("Please enter your first name: ");
     this->_lastName = this->_getInput("Please enter your last name: ");
     this->_nickname = this->_getInput("Please enter your nickname: ");
     this->_phoneNumber = this->_getInput("Please enter your phone number: ");
