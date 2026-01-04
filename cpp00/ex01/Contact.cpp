@@ -5,7 +5,8 @@ Contact::Contact() {}
 
 Contact::~Contact() {}
 
-std::string Contact::_getInput(std::string prompt) const {
+std::string Contact::_getInput(std::string prompt) const
+{
     std::string input;
     while (true)
     {
@@ -24,8 +25,7 @@ std::string Contact::_getInput(std::string prompt) const {
 }
 
 void    Contact::init(void) {
-    Contact::_firstName = this->_getInput("Please enter your first name: ");
-    // this->_firstName = this->_getInput("Please enter your first name: ");
+    this->_firstName = this->_getInput("Please enter your first name: ");
     this->_lastName = this->_getInput("Please enter your last name: ");
     this->_nickname = this->_getInput("Please enter your nickname: ");
     this->_phoneNumber = this->_getInput("Please enter your phone number: ");

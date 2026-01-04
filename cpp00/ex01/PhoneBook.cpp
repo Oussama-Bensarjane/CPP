@@ -59,7 +59,7 @@ int     PhoneBook::_readInput() const {
         if (iss >> input && input >= 0 && input < this->_size)
             valid = true;
         else
-            std::cout << "Invalid index; please re-enter." << std::endl;
+            std::cout << "Invalid index; please Enter it again." << std::endl;
     } while (!valid);
     return input;
 }
