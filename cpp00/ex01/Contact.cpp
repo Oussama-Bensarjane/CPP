@@ -14,7 +14,7 @@ std::string Contact::_getInput(std::string prompt) const
         if (!std::getline(std::cin, input))
         {
             std::cin.clear();
-            std::cout << "Input stream error; try again." << std::endl;
+            std::cerr << "Input stream error; try again." << std::endl;
             break;
         }
         if (!input.empty())
