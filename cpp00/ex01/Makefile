@@ -18,24 +18,24 @@ GRAY		=	\e[33;2;37m
 RESET		=	\e[0m
 CURSIVE		=	\e[33;3m
 
-.PHONY: all clean fclean re
+.PHONY: clean
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 	@printf "$(GREEN)- Executable ready.\n$(RESET)"
 
 $(OBJDIR)/%.o: %.cpp $(HEADER)
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(OBJDIR) $(OBJ)
+	$(RM) $(OBJDIR) $(OBJ)
 	@printf "$(YELLOW)    - Object files removed.$(RESET)\n"
 
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
 
 re: fclean all

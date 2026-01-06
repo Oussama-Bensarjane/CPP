@@ -18,7 +18,6 @@ void    PhoneBook::welcome(void) const {
 
 void    PhoneBook::addContact(void) {
     this->_contacts[this->_nextIndex].init();
-    this->_contacts[this->_nextIndex].setIndex(this->_nextIndex);
     this->_nextIndex = (this->_nextIndex + 1) % 8;
     if (this->_size < 8)
         this->_size++;

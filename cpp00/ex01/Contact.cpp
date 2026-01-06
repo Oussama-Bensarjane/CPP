@@ -46,15 +46,10 @@ void    Contact::init(void) {
     std::cout << std::endl;
 }
 
-
 std::string Contact::_printLen(std::string str) const {
     if (str.length() > 10)
         return str.substr(0, 9) + ".";
     return str;
-}
-
-void    Contact::setIndex(int i) {
-    this->_index = i;
 }
 
 void    Contact::view(int index) const {
