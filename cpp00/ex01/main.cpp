@@ -17,9 +17,9 @@ int main(void) {
         else if (input == "SEARCH") {
             book.printContacts();
             book.search();
-        } else if (!input.empty()) {
-            std::cout << "Unknown command. Use ADD, SEARCH, or EXIT." << std::endl;
         }
+        else if (!input.empty())
+            std::cout << "Unknown command. Use ADD, SEARCH, or EXIT." << std::endl;
     }
     return 0;
 }

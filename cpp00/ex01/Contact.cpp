@@ -17,7 +17,7 @@ std::string Contact::_getInput(std::string prompt) const
             std::cout << "Input stream error; try again." << std::endl;
             break;
         }
-        if (!input.empty())
+        if (input.find_first_not_of(" \t") != std::string::npos)
             break;
         std::cout << "Input cannot be empty; try again." << std::endl;
     }

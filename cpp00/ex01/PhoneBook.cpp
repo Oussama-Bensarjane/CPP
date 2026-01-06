@@ -1,5 +1,4 @@
 #include "PhoneBook.hpp"
-#include <limits>
 #include <sstream>
 
 PhoneBook::PhoneBook() : _nextIndex(0), _size(0) {}
@@ -52,8 +51,8 @@ int     PhoneBook::_readInput() const {
         if (!std::getline(std::cin, line))
         {
             std::cin.clear();
-            std::cout << "Input stream error; please try again." << std::endl;
-            continue;
+            std::cout << "Input stream error." << std::endl;
+            break;
         }
         std::istringstream iss(line);
         if (iss >> input && input >= 0 && input < this->_size)
