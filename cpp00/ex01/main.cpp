@@ -1,5 +1,12 @@
 #include "PhoneBook.hpp"
-#include <iostream>
+
+static bool isValidInput(const std::string& str) {
+    for (size_t i = 0; i < str.length(); i++) {
+        if (!std::isprint((unsigned char)str[i]))
+            return false;
+    }
+    return true;
+}
 
 int main(void) {
     PhoneBook book;
@@ -10,6 +17,10 @@ int main(void) {
         std::cout << "> " << std::flush;
         if (!std::getline(std::cin, input))
             break;
+        if (!isValidInput(input)) {
+            std::cout << "Invalid input." << std::endl;
+            continue;
+        }
         if (input == "EXIT") 
             break;
         if (input == "ADD")

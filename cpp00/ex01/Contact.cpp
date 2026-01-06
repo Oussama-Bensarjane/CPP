@@ -5,6 +5,14 @@ Contact::Contact() {}
 
 Contact::~Contact() {}
 
+static bool isValidInput(const std::string& str) {
+    for (size_t i = 0; i < str.length(); i++) {
+        if (!std::isprint((unsigned char)str[i]))
+            return false;
+    }
+    return true;
+}
+
 std::string Contact::_getInput(std::string prompt) const
 {
     std::string input;
@@ -14,8 +22,13 @@ std::string Contact::_getInput(std::string prompt) const
         if (!std::getline(std::cin, input))
         {
             std::cin.clear();
-            std::cout << "Input stream error; try again." << std::endl;
+            std::cout << "Input stream error or EOF." << std::endl;
             break;
+        }
+        if (!isValidInput(input))
+        {
+            std::cout << "Invalid input; try again." << std::endl;
+            continue;
         }
         if (input.find_first_not_of(" \t") != std::string::npos)
             break;

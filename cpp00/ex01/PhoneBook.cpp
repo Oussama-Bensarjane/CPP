@@ -1,5 +1,4 @@
 #include "PhoneBook.hpp"
-#include <sstream>
 
 PhoneBook::PhoneBook() : _nextIndex(0), _size(0) {}
 
