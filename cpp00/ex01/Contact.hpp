@@ -17,7 +17,9 @@ private:
     std::string _darkestSecret;
 
     std::string _printLen(std::string str) const;
-    std::string _getInput(std::string str) const;
+    std::string _getInput(std::string prompt) const;
+    std::string _getAlphaInput(std::string prompt) const;
+    std::string _getPhoneInput(std::string prompt) const;
 
 public:
     Contact();

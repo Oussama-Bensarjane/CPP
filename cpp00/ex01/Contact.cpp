@@ -13,6 +13,22 @@ static bool isValidInput(const std::string& str) {
     return true;
 }
 
+static bool isAlphaOnly(const std::string& str) {
+    for (size_t i = 0; i < str.length(); i++) {
+        if (!std::isalpha((unsigned char)str[i]) && str[i] != ' ')
+            return false;
+    }
+    return true;
+}
+
+static bool isDigitOnly(const std::string& str) {
+    for (size_t i = 0; i < str.length(); i++) {
+        if (!std::isdigit((unsigned char)str[i]))
+            return false;
+    }
+    return true;
+}
+
 std::string Contact::_getInput(std::string prompt) const
 {
     std::string input;
@@ -21,7 +37,6 @@ std::string Contact::_getInput(std::string prompt) const
         std::cout << prompt << std::flush;
         if (!std::getline(std::cin, input))
         {
-            std::cin.clear();
             std::cout << "Input stream error or EOF." << std::endl;
             break;
         }
@@ -37,11 +52,63 @@ std::string Contact::_getInput(std::string prompt) const
     return input;
 }
 
+std::string Contact::_getAlphaInput(std::string prompt) const
+{
+    std::string input;
+    while (true)
+    {
+        std::cout << prompt << std::flush;
+        if (!std::getline(std::cin, input))
+        {
+            std::cout << "Input stream error or EOF." << std::endl;
+            break;
+        }
+        if (input.find_first_not_of(" \t") == std::string::npos)
+        {
+            std::cout << "Input cannot be empty; try again." << std::endl;
+            continue;
+        }
+        if (!isAlphaOnly(input))
+        {
+            std::cout << "Only letters allowed; try again." << std::endl;
+            continue;
+        }
+        break;
+    }
+    return input;
+}
+
+std::string Contact::_getPhoneInput(std::string prompt) const
+{
+    std::string input;
+    while (true)
+    {
+        std::cout << prompt << std::flush;
+        if (!std::getline(std::cin, input))
+        {
+            std::cout << "Input stream error or EOF." << std::endl;
+            break;
+        }
+        if (input.find_first_not_of(" \t") == std::string::npos)
+        {
+            std::cout << "Input cannot be empty; try again." << std::endl;
+            continue;
+        }
+        if (!isDigitOnly(input))
+        {
+            std::cout << "Only numbers allowed; try again." << std::endl;
+            continue;
+        }
+        break;
+    }
+    return input;
+}
+
 void    Contact::init(void) {
-    this->_firstName = this->_getInput("Please enter your first name: ");
-    this->_lastName = this->_getInput("Please enter your last name: ");
-    this->_nickname = this->_getInput("Please enter your nickname: ");
-    this->_phoneNumber = this->_getInput("Please enter your phone number: ");
+    this->_firstName = this->_getAlphaInput("Please enter your first name: ");
+    this->_lastName = this->_getAlphaInput("Please enter your last name: ");
+    this->_nickname = this->_getAlphaInput("Please enter your nickname: ");
+    this->_phoneNumber = this->_getPhoneInput("Please enter your phone number: ");
     this->_darkestSecret = this->_getInput("Please enter your darkest secret: ");
     std::cout << std::endl;
 }

@@ -53,7 +53,8 @@ int     PhoneBook::_readInput() const {
             break;
         }
         std::istringstream iss(line);
-        if (iss >> input && input >= 0 && input < this->_size)
+        char leftover = '\0';
+        if (iss >> input && !(iss >> leftover) && input >= 0 && input < this->_size)
             valid = true;
         else
             std::cout << "Invalid index; please Enter it again." << std::endl;
