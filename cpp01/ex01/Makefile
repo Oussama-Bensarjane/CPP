@@ -1,4 +1,4 @@
-NAME		= ZombieBrain
+NAME		= ZombieMoar
 	
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -6,7 +6,7 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-FILES		= main newZombie randomChump Zombie
+FILES		= main zombieHorde Zombie
 
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
 HEADER		= Zombie.hpp
