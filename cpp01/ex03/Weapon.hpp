@@ -9,11 +9,10 @@ private:
     std::string type;
 
 public:
-    std::string& getType(std::string type) const;
-    std::string setType(std::string &type);
+    const std::string&	getType() const;
+    void				setType(std::string newType);
 
-
-    Weapon();
+    Weapon(std::string type);
     ~Weapon();
 };
 
