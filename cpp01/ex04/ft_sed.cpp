@@ -11,7 +11,13 @@ FtSed::~FtSed()
 
 bool FtSed::replace()
 {
-    // try to openn
+    struct stat file_info;
+    if (stat(_filename.c_str(), &file_info) == 0 && S_ISDIR(file_info.st_mode))
+    {
+        std::cerr << "Error: " << _filename << " is a directory." << std::endl;
+        return false;
+    }
+
     std::ifstream inFile(_filename.c_str());
     if (!inFile.is_open())
     {
@@ -19,7 +25,6 @@ bool FtSed::replace()
         return false;
     }
 
-    // creat the outputt
     std::ofstream outFile((_filename + ".replace").c_str());
     if (!outFile.is_open())
     {
@@ -28,7 +33,6 @@ bool FtSed::replace()
         return false;
     }
 
-    // Readinggg
     std::string content;
     std::string line;
     while (std::getline(inFile, line))
@@ -48,7 +52,6 @@ bool FtSed::replace()
         }
     }
 
-    // Writng to outputt fle
     outFile << content;
 
     inFile.close();
