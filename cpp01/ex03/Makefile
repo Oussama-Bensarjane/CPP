@@ -4,12 +4,12 @@ CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 
-OBJDIR = .objFiles
+OBJDIR		= .objFiles
 
-FILES		= main HumanA HumanB Weapon
+FILES		= main Weapon HumanA HumanB
 
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= HumanA.hpp HumanB.hpp Weapon.hpp
+HEADER		= Weapon.hpp HumanA.hpp HumanB.hpp
 
 #Colors:
 GREEN		=	\e[92;5;118m

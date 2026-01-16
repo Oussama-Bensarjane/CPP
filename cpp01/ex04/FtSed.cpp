@@ -1,4 +1,4 @@
-#include "ft_sed.hpp"
+#include "FtSed.hpp"
 
 FtSed::FtSed(std::string filename, std::string s1, std::string s2)
     : _filename(filename), _s1(s1), _s2(s2)

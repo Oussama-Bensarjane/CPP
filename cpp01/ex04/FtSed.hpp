@@ -1,5 +1,5 @@
-#ifndef FT_SED_HPP
-# define FT_SED_HPP
+#ifndef FTSED_HPP
+# define FTSED_HPP
 
 # include <string>
 # include <fstream>

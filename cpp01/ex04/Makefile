@@ -1,4 +1,4 @@
-NAME		= ft_sed
+NAME		= FtSed
 	
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -6,10 +6,10 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-FILES		= main ft_sed
+FILES		= main FtSed
 
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= ft_sed.hpp
+HEADER		= FtSed.hpp
 
 #Colors:
 GREEN		=	\e[92;5;118m
