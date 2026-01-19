@@ -25,7 +25,7 @@ $(NAME): $(OBJ) $(HEADER)
 	@printf "$(GREEN)- Executable ready.\n$(RESET)"
 
 $(OBJDIR)/%.o: %.cpp $(HEADER)
-	@mkdir -p $(dir $@)
+	@mkdir -p $(OBJDIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
