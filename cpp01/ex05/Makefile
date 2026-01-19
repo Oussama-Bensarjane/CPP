@@ -12,11 +12,9 @@ OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
 HEADER		= Harl.hpp
 
 #Colors:
-GREEN		=	\e[92;5;118m
-YELLOW		=	\e[93;5;226m
-GRAY		=	\e[33;2;37m
-RESET		=	\e[0m
-CURSIVE		=	\e[33;3m
+GREEN		=	\033[38;5;46m
+YELLOW		=	\033[38;5;226m
+RESET		=	\033[0m
 
 .PHONY: clean
 
