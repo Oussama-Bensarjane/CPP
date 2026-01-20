@@ -1,5 +1,4 @@
 #include "Fixed.hpp"
-#include <cmath>
 
 Fixed::Fixed() : _fixedPointValue(0) {}
 
@@ -93,10 +92,23 @@ Fixed Fixed::operator--(int) {
 	return temp;
 }
 
-Fixed& Fixed::min(Fixed& a, Fixed& b) { return (a < b) ? a : b; }
-const Fixed& Fixed::min(const Fixed& a, const Fixed& b) { return (a < b) ? a : b; }
-Fixed& Fixed::max(Fixed& a, Fixed& b) { return (a > b) ? a : b; }
-const Fixed& Fixed::max(const Fixed& a, const Fixed& b) { return (a > b) ? a : b; }
+Fixed& Fixed::min(Fixed& a, Fixed& b)
+{
+	return (a < b) ? a : b;
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
+{
+	return (a < b) ? a : b;
+}
+Fixed& Fixed::max(Fixed& a, Fixed& b)
+{
+	return (a > b) ? a : b;
+}
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+	return (a > b) ? a : b;
+}
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
 	os << fixed.toFloat();
