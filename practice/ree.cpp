@@ -3,28 +3,54 @@
 #include <unistd.h>
 #include <cctype>
 
+class Adder{
+public:
+	int add(int a, int b){ return a + b;}
+	int add(float a, float b){ return a + b;}
+	std::string add(const std::string& a,const std::string& b){ return a + b;}
+};
 
 int main(int argc, char **argv)
 {
-	// int *a = new int(10);
-	// int* &q = a;
-	// std::cout << *q << " "<< a << ", address of a is: " <<  &a << std::endl;
-	// delete a;
-	// 	std::cout << *q << " "<< a << ", address of a is: " <<  &a << std::endl;
 
-	// int b = 4;
-	// q = &b;
-	// std::cout << *q << " "<< a << ", address of a is: " <<  &q << std::endl;
+	std::cout << "int: " << Adder::add(
 
-	std::string *ss = new std::string("hello world!");
-	const std::string* s= ss;
-
-	std::cout << &ss << ",  " << ss << ",  " << *ss << std::endl;
-
-	*ss = std::string("riight\n");
-	std::cout << &ss << ",  " << ss << ",  " << *ss << std::endl;
-
-	std::cout << &s << ",  " << s << ",  " << *s << std::endl;
-
+	)
 	return (0);
 }
+
+
+
+
+
+
+
+
+/**
+ * #include <iostream>
+#include <string>
+
+class Adder {
+public:
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    static float add(float a, float b) {
+        return a + b;
+    }
+
+    static std::string add(const std::string& a, const std::string& b) {
+        return a + b;
+    }
+};
+
+int main() {
+    std::cout << "Int:   " << Adder::add(2, 3) << std::endl;             // 5
+    std::cout << "Float: " << Adder::add(2.5f, 3.5f) << std::endl;       // 6.0
+    std::cout << "Str:   " << Adder::add("Hi, ", "there!") << std::endl; // "Hi, there!"
+
+    return 0;
+}
+
+ */
