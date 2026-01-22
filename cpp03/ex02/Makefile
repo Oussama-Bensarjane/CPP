@@ -1,4 +1,4 @@
-NAME		= ScavTrap
+NAME		= FragTrap
 	
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -6,10 +6,10 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-FILES		= main ClapTrap ScavTrap
+FILES		= main ClapTrap ScavTrap FragTrap
 
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= ClapTrap.hpp ScavTrap.hpp
+HEADER		= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 #Colors:
 GREEN		=	\033[38;5;46m
