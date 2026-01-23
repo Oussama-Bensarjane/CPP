@@ -12,6 +12,7 @@ protected:
 	int			attackDamage;
 	
 public:
+	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap& other);
 	ClapTrap& operator=(const ClapTrap& other);
