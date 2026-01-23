@@ -47,14 +47,20 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		std::cout << "ClapTrap " << name << " is already destroyed!" << std::endl;
 		return ;
 	}
-	hitPoints = hitPoints - amount;
-	if (hitPoints < 0)  hitPoints = 0;
+	if (amount > static_cast<unsigned int>(hitPoints))
+		hitPoints = 0;
+	else
+		hitPoints -= amount;
 	std::cout << "ClapTrap " << name << " takes " << amount << " points of damage! (HP: " << hitPoints << ")" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
 	if (energyPoints > 0 && hitPoints > 0) {
-		hitPoints = hitPoints + amount;
+		if (amount > static_cast<unsigned int>(INT32_MAX - hitPoints)) {
+			hitPoints = INT32_MAX;
+		}
+		else
+			hitPoints += amount;
 		energyPoints--;
 		std::cout << "ClapTrap " << name << " is repaired for " << amount << " hit points! (HP: " << hitPoints << ")" << std::endl;
 	} else {
