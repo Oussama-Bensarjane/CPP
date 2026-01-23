@@ -56,8 +56,8 @@ void ClapTrap::takeDamage(unsigned int amount) {
 
 void ClapTrap::beRepaired(unsigned int amount) {
 	if (energyPoints > 0 && hitPoints > 0) {
-		if (amount > static_cast<unsigned int>(INT32_MAX - hitPoints)) {
-			hitPoints = INT32_MAX;
+		if (amount > static_cast<unsigned int>(INT_MAX - hitPoints)) {
+			hitPoints = INT_MAX;
 		}
 		else
 			hitPoints += amount;
