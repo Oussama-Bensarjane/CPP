@@ -1,4 +1,4 @@
-NAME		= Animal
+NAME		= Brain
 	
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -6,10 +6,10 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-FILES		= main Dog Cat Animal WrongCat WrongAnimal
+FILES		= main Dog Cat Animal Brain
 
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= Dog.hpp Cat.hpp Animal.hpp WrongCat.hpp WrongAnimal.hpp
+HEADER		= Dog.hpp Cat.hpp Animal.hpp Brain.hpp
 
 #Colors:
 GREEN		=	\033[38;5;46m
