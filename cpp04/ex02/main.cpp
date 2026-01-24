@@ -6,8 +6,8 @@ int main()
 {
     const int SIZE = 4;
     std::cout << "********POLYMORPHISM********" << std::endl;
-    
-    Animal* animals[SIZE];
+
+    AAnimal* animals[SIZE];
     int i;
     std::cout << "[1] creating Cat classes..." << std::endl;
     for(i = 0; i < SIZE/2; i++)
@@ -27,7 +27,9 @@ int main()
     {
         delete animals[i];
     }
-    std::cout << "--------------\n";
+
+    std::cout << "----------------\n";
+
     WrongAnimal* wrong = new WrongAnimal();
     WrongAnimal* wrongCat = new WrongCat();
     wrong->makeSound();
