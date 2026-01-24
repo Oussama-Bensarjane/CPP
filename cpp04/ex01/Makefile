@@ -6,10 +6,10 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-FILES		= main Dog Cat Animal Brain
+FILES		= main Dog Cat Animal Brain WrongCat WrongAnimal
 
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= Dog.hpp Cat.hpp Animal.hpp Brain.hpp
+HEADER		= Dog.hpp Cat.hpp Animal.hpp Brain.hpp WrongCat.hpp WrongAnimal.hpp
 
 #Colors:
 GREEN		=	\033[38;5;46m

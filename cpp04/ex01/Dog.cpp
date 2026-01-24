@@ -33,5 +33,7 @@ void Dog::setIdea(int idx, const std::string& idea) {
 }
 
 std::string Dog::getIdea(int idx) const {
-    return brain ? brain->getIdea(idx) : "";
+    if (brain)
+        return brain->getIdea(idx);
+    return "";
 }
